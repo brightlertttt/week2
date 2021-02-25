@@ -294,7 +294,7 @@ void ButtonMatrixUpdate()
 				MYID = MYID << 1;
 								if(State == 0)
 								{
-									if(ButtonMatrixState == 0b1000000 && count == 0) //6
+									if(ButtonMatrixState == 0b1000000) //6
 									{
 										MYID = MYID | 1;
 										State = 1;
@@ -305,7 +305,6 @@ void ButtonMatrixUpdate()
 										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-										count=0;
 									}
 									else
 									{
