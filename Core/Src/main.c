@@ -296,20 +296,17 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000) //6
 									{
-										MYID = MYID | 1;
 										State = 1;
 
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 									}
 									else
 									{
 										State = 0;
-										count+=1;
 									}
 									break;
 								}
@@ -317,12 +314,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000000) //2
 									{
-										MYID = MYID | 1;
 										State = 2;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -337,12 +332,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b10000000000) //3
 									{
-										MYID = MYID | 1;
 										State = 3;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -357,12 +350,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b10000) //4
 									{
-										MYID =MYID | 1;
 										State = 4;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -377,12 +368,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000000000) //0
 									{
-										MYID =MYID | 1;
 										State = 5;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -397,12 +386,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b100000) //5
 									{
-										MYID = MYID |1;
 										State = 6;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -417,12 +404,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000000000) //0
 									{
-										MYID =MYID | 1;
 										State = 7;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -437,12 +422,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000000000) //0
 									{
-										MYID =MYID | 1;
 										State = 8;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -457,12 +440,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000000000) //0
 									{
-										MYID =MYID | 1;
 										State = 9;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -477,12 +458,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1000000) //6
 									{
-										MYID = MYID | 1;
 										State = 10;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -497,12 +476,10 @@ void ButtonMatrixUpdate()
 								{
 									if(ButtonMatrixState == 0b1) //7
 									{
-										MYID = MYID | 1;
 										State = 11;
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -521,7 +498,6 @@ void ButtonMatrixUpdate()
 									}
 									else if(ButtonMatrixState == 0b1000)
 									{
-										MYID =0;
 										State=0;
 										HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 										count=0;
@@ -542,7 +518,7 @@ void ButtonMatrixUpdate()
 		//SET Rn
 		HAL_GPIO_WritePin(ButtonMatrixPort[NowOutputPin],
 				ButtonMatrixPin[NowOutputPin], GPIO_PIN_SET);
-		// update New Row
+		// update New R
 		ButtonMatrixRow = (ButtonMatrixRow + 1) % 4;
 
 		uint8_t NextOutputPin = ButtonMatrixRow + 4;

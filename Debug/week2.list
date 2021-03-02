@@ -1699,7 +1699,7 @@ void ButtonMatrixUpdate()
  8000ca2:	4619      	mov	r1, r3
  8000ca4:	f000 fbfa 	bl	800149c <HAL_GPIO_WritePin>
 				ButtonMatrixPin[NowOutputPin], GPIO_PIN_SET);
-		// update New Row
+		// update New R
 		ButtonMatrixRow = (ButtonMatrixRow + 1) % 4;
  8000ca8:	4b10      	ldr	r3, [pc, #64]	; (8000cec <ButtonMatrixUpdate+0x544>)
  8000caa:	781b      	ldrb	r3, [r3, #0]
